@@ -1,0 +1,213 @@
+.container {
+	background-color: #eee;
+	width: 1000px;
+	margin: 30px auto;
+
+	display: grid;
+
+	grid-template-rows: [header-start] 100px [header-end box-start] 200px [box-end main-start] 400px [main-end footer-start] 100px [footer-end];
+	grid-template-columns: repeat(3, [col-start] 2fr [col-end]) 1fr [grid-end];
+	grid-gap: 20px;
+
+	grid-template-areas:
+		"head head head head"
+		"box-1 box-2 box-3 side"
+		"main main main side"
+		"foot foot foot foot";
+
+	/* // grid-template-rows: 150px 150px;
+	grid-template-rows: repeat(2, 150px);
+	// grid-template-columns: 150px 150px 150px;
+	// grid-template-columns: repeat(3,150px);
+	// grid-template-columns: repeat(2,150px) 300px;
+	// grid-template-columns: repeat(2,150px) 1fr;
+	grid-template-columns: repeat(3, 1fr);
+	// grid-template-columns: 1fr 3fr 1fr;
+	// grid-template-columns: 50% 3fr 1fr;
+
+	// grid-row-gap: 30px;
+	// grid-column-gap: 15px;
+
+	grid-gap: 30px; */
+}
+
+/* .item {
+	padding: 20px;
+	font-size: 30px;
+	font-family: sans-serif;
+	color: white;
+} */
+
+.item--1 {
+	background-color: orange;
+	/* grid-column: 1/-1;
+	grid-column: col-start 1 / grid-end; */
+	grid-area: head;
+	/* grid-row-start: 2;
+	grid-row-end: 3;
+	grid-column-start: 2;
+	grid-column-end: 3; */
+	/* grid-row: 2/3;
+	grid-column: 2/3;
+	z-index: 10; */
+}
+.item--2 {
+	background-color: green;
+	grid-area: 2/1/3/2;
+	grid-area: box-1;
+	/* grid-column: 2 / span 2; */
+	/* grid-column: 2 / -1; */
+}
+.item--3 {
+	background-color: violet;
+	grid-area: 2/2/3/3;
+	grid-area: box-2;
+	/* grid-row: 2/3;
+	grid-column: 1/3; */
+
+	/* orange lays under it */
+}
+.item--4 {
+	background-color: pink;
+	grid-area: 2/3/3/4;
+	grid-area: box-3;
+}
+.item--5 {
+	background-color: blue;
+	grid-area: 2/4/5/5;
+	grid-area: side;
+	/* grid-row: 1/2;
+	grid-column: 3/4; */
+	/* grid-area: 1/3/2/4; */
+}
+.item--6 {
+	background-color: brown;
+	/* grid-area: 1/2/2/3; */
+	grid-area: 3/1/5/4;
+	grid-area: main;
+}
+.item--7 {
+	background-color: yellow;
+	/* grid-area: 1/2/2/3; */
+	grid-column: 1/-1;
+	grid-area: foot;
+}
+
+.container2 {
+	background-color: #ddd;
+	width: 1000px;
+	height: 1000px;
+	margin: 30px auto;
+
+	display: grid;
+
+	grid-template-columns: repeat(2, 200px);
+	grid-template-rows: repeat(2, 100px);
+
+	grid-gap: 20px;
+
+	grid-auto-rows: 80px;
+	grid-auto-flow: row dense;
+	grid-auto-columns: 0.5fr;
+
+	justify-content: center;
+	align-content: center;
+}
+
+.item2 {
+	padding: 10px;
+	font-size: 30px;
+	font-family: sans-serif;
+	color: white;
+}
+
+.item2--1 {
+	background-color: orange;
+}
+.item2--2 {
+	background-color: orange;
+}
+.item2--3 {
+	background-color: orange;
+}
+.item2--4 {
+	background-color: orange;
+
+	align-self: center;
+	justify-self: center;
+}
+.item2--5 {
+	background-color: orange;
+}
+.item2--6 {
+	background-color: orange;
+
+	grid-row: 2 / span2;
+}
+.item2--7 {
+	background-color: orange;
+
+	grid-column: 1/-1;
+	/* justify-self: end; */
+}
+.item2--8 {
+	background-color: orange;
+}
+.item2--9 {
+	background-color: orange;
+}
+
+.container3 {
+	background-color: #ddd;
+	width: 1000px;
+	margin: 30px auto;
+
+	display: grid;
+
+	/* grid-template-rows: repeat(2, 150px); */
+	/* grid-template-columns: max-content 1fr 1fr min-content; */
+	/* min-content overflows in order to avoid it static row dimension needs to be fixed min-content as well.*/
+	grid-template-rows: repeat(2, minmax(150px, min-content));
+	grid-template-columns: repeat(auto-fill, 100px);
+	/* divides width by 100px and creates n partions 900px width crezates 9 cells 950px creates 9 cells 1000px creates 10cells*/
+	grid-template-columns: repeat(auto-fit, 100px);
+	/* occupies n times of elements and the remainder is left out with no division */
+	width: 90%;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	/* creates n availanble item of either 100px or more space left then divide by n to fill the entire availabel width */
+	/* grid-auto-rows: 150px; */
+}
+
+.item3 {
+	padding: 10px;
+	font-size: 30px;
+	font-family: sans-serif;
+	color: white;
+	background-color: orangered;
+	/* height: 150px; */
+}
+
+.item3--1 {
+	background-color: orange;
+}
+.item3--2 {
+	background-color: RED;
+}
+.item3--3 {
+	background-color: VIOLET;
+}
+.item3--4 {
+	background-color: pink;
+}
+.item3--5 {
+	background-color: chocolate;
+}
+.item3--6 {
+	background-color: yellowgreen;
+}
+.item3--7 {
+	background-color: blue;
+}
+.item3--8 {
+	background-color: rebeccapurple;
+}
