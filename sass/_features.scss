@@ -1,4 +1,8 @@
 .features {
 	background-color: $color-grey-light-2;
 	grid-column: center-start / center-end;
+
+	display: grid; //we change it to a grid container to create a sub grid inside features
+	grid-template-columns: repeat(3, 1fr);
+	// grid-template-rows: auto auto;
 }
