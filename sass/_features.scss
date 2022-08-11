@@ -5,7 +5,33 @@
 	margin: 15rem 0;
 
 	display: grid; //we change it to a grid container to create a sub grid inside features
-	grid-template-columns: repeat(3, 1fr);
+	// grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	//makes it responsive and reduce the columns to 2 and drop the remainder to a new row via auto-fit and minmax equilibrium
 	// grid-template-rows: auto auto;
 	gap: 6rem;
+
+	align-items: start;
+	//in order to provide consistent spacing between heading and the paragraphs, the cells (.feature) needs to be aligned to start/top rather than strecth by default @ the container
+}
+
+.feature {
+	display: grid;
+	grid-template-columns: min-content 1fr;
+	grid-row-gap: 1.5rem;
+	grid-column-gap: 2.5rem;
+
+	&__icon {
+		fill: $color-primary;
+		width: 4.5rem;
+		height: 4.5rem;
+
+		grid-row: 1 / span 2;
+		// grid-row: 1 / 3;
+
+		transform: translateY(-1rem); //nudge the icon a little above
+	}
+	&__text {
+		font-size: 1.7rem;
+	}
 }
