@@ -46,4 +46,10 @@ body {
 			[col-start] minmax(min-content, 14rem) [col-end]
 		)
 		[center-end] 1fr [full-end];
+
+	//temp
+	& > * {
+		padding: 40px;
+		font-size: 3rem;
+	}
 }
