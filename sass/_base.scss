@@ -37,5 +37,13 @@ body {
 
 .container {
 	display: grid;
+	// 1.cell 80% of the view height/ 2.cell fit to content - auto could be used as well / 3.cell 40%of the view width / the remainder cellsx3 min-content or auto
 	grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+	// 8rem for the sidebar + 8 equal columns occupying the viewport width - 14rem max and minimum as possible to fit the content squezzed between 2 1fr columns which shrink/grows freely
+	grid-template-columns:
+		[sidebar-start] 8rem [sidebar-end full-start] 1fr [center-start] repeat(
+			8,
+			[col-start] minmax(min-content, 14rem) [col-end]
+		)
+		[center-end] 1fr [full-end];
 }
