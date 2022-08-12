@@ -39,6 +39,12 @@ body {
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
   }
 }
+@media only screen and (max-width: 50em) {
+  .container {
+    display: grid;
+    grid-template-rows: 6rem calc(100vh - 6rem);
+  }
+}
 
 .heading-4, .heading-3, .heading-2, .heading-1 {
   font-family: "Josefin Sans", sans-serif;
@@ -177,6 +183,11 @@ body {
   grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
   grid-row-gap: 1.5rem;
 }
+@media only screen and (max-width: 50em) {
+  .header {
+    grid-column: full-start/full-end;
+  }
+}
 .header__logo {
   height: 3rem;
   justify-self: center;
@@ -223,6 +234,11 @@ body {
   align-content: center;
   justify-content: center;
 }
+@media only screen and (max-width: 50em) {
+  .realtors {
+    grid-column: full-start/full-end;
+  }
+}
 .realtors__list {
   display: grid;
   grid-template-columns: -webkit-min-content -webkit-max-content;
@@ -230,6 +246,12 @@ body {
   grid-column-gap: 2rem;
   grid-row-gap: 5vh;
   align-items: center;
+}
+@media only screen and (max-width: 50em) {
+  .realtors__list {
+    grid-template-columns: repeat(3, -webkit-min-content -webkit-max-content);
+    grid-template-columns: repeat(3, min-content max-content);
+  }
 }
 .realtors__img {
   display: block;
@@ -274,16 +296,30 @@ body {
   background-color: #c69963;
   grid-column: full-start/col-end 4;
   background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(../img/back.jpg);
+  background-size: cover;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
   align-items: center;
+}
+@media only screen and (max-width: 50em) {
+  .story__pictures {
+    grid-column: full-start/full-end;
+    grid-row: 6/7;
+    padding: 3rem;
+  }
 }
 .story__img--1 {
   width: 100%;
   grid-row: 2/6;
   grid-column: 2/6;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-width: 50em) {
+  .story__img--1 {
+    grid-column: 1/5;
+    grid-row: 1/-1;
+  }
 }
 .story__img--2 {
   width: 115%;
@@ -292,6 +328,12 @@ body {
   z-index: 2;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1);
 }
+@media only screen and (max-width: 50em) {
+  .story__img--2 {
+    grid-row: 1/-1;
+    width: 100%;
+  }
+}
 .story__content {
   background-color: #f9f7f6;
   grid-column: col-start 5/full-end;
@@ -299,6 +341,12 @@ body {
   display: grid;
   align-content: center;
   justify-items: flex-start;
+}
+@media only screen and (max-width: 50em) {
+  .story__content {
+    grid-column: full-start/full-end;
+    grid-row: 5/6;
+  }
 }
 .story__text {
   font-size: 1.5rem;

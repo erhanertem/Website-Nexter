@@ -18,6 +18,7 @@ $font-display: "Josefin Sans", sans-serif;
 // we should use em with breakpoints rather than px
 $bp-largest: 75em; // 1200px/16px
 $bp-large: 62.5em; // 1000px/16px
+$bp-medium: 50em; // 800px/16px
 
 //global reset
 *,
@@ -68,5 +69,11 @@ body {
 			[full-start] minmax(6rem, 1fr)
 			[center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
 			[center-end] minmax(6rem, 1fr) [full-end];
+	}
+
+	//with this media query we would like to place the top 3 realtor section below the hero area. In order to have 100% vh coverage of the hero section with the side bar, we use calc(100vh-6rem) for the right height of the hero section
+	@media only screen and (max-width: $bp-medium) {
+		display: grid;
+		grid-template-rows: 6rem calc(100vh - 6rem);
 	}
 }

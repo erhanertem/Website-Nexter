@@ -17,6 +17,11 @@
 	align-content: center;
 	justify-content: center;
 
+	//drop realtors below and make it cover 100% across the width of the grid
+	@media only screen and (max-width: $bp-medium) {
+		grid-column: full-start/full-end;
+	}
+
 	&__list {
 		display: grid;
 		grid-template-columns: min-content max-content;
@@ -24,6 +29,10 @@
 		grid-row-gap: 5vh;
 
 		align-items: center;
+
+		@media only screen and (max-width: $bp-medium) {
+			grid-template-columns: repeat(3, min-content max-content);
+		}
 	}
 
 	&__img {
