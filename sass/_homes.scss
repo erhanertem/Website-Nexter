@@ -1,4 +1,89 @@
 .homes {
-	background-color: $color-secondary;
+	// background-color: $color-secondary;
 	grid-column: center-start/center-end;
+	margin: 15rem 0;
+
+	// create a sub-grid system for the cards
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	gap: 7rem;
+}
+
+.home {
+	background-color: $color-grey-light-1;
+
+	//create sub-grid system
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-row-gap: 3.5rem;
+
+	&__img {
+		width: 100%;
+		grid-column: 1/-1;
+		grid-row: 1/2;
+		z-index: 1;
+	}
+
+	&__like {
+		grid-area: 1/2/2/3;
+
+		fill: $color-primary;
+		stroke: $color-primary-dark;
+		stroke-width: 1px;
+		// stroke-dasharray: 2, 2;
+		stroke-linejoin: round;
+
+		width: 2.5rem;
+		height: 2.5rem;
+		z-index: 2; //brings it on topof the img - just a precaution
+
+		justify-self: end;
+		margin: 1rem;
+	}
+	&__name {
+		grid-column: 1/-1;
+		grid-row: 1/2;
+		z-index: 3;
+		justify-self: center;
+		align-self: flex-end;
+		transform: translateY(50%);
+
+		width: 80%;
+		font-family: $font-display;
+		text-align: center;
+		font-size: 1.6rem;
+		padding: 1.25rem;
+		background-color: $color-secondary;
+		color: #fff;
+		font-weight: 400;
+	}
+
+	&__location,
+	&__rooms {
+		margin-top: 2.5rem;
+	}
+
+	&__location,
+	&__rooms,
+	&__area,
+	&__price {
+		margin-left: 2rem;
+
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+
+		svg {
+			fill: $color-primary;
+			width: 2rem;
+			height: 2rem;
+		}
+		p {
+			font-size: 1.5rem;
+		}
+	}
+
+	&__btn {
+		grid-column: 1/-1;
+	}
 }
