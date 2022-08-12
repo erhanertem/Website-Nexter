@@ -17,7 +17,7 @@
 	display: grid;
 	//grid container needs to be more responsive as well so max-content and min-content range needs to be established.
 	grid-template-columns: minmax(min-content, max-content);
-	grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr; //defiend the first row and we established specific height of the container. The remainder try to fit in between
+	grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr; //defined the first row and we established specific height of the container. The remainder try to fit in between
 	grid-row-gap: 1.5rem;
 
 	&__logo {
