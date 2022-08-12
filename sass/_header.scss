@@ -1,4 +1,59 @@
 .header {
 	background-color: $color-grey-dark-1;
 	grid-column: full-start/col-end 6;
+
+	background-image: linear-gradient(
+			rgba($color-secondary, 0.93),
+			rgba($color-secondary, 0.93)
+		),
+		url(../img/hero.jpeg);
+	background-size: cover;
+	background-position: top;
+	padding: 8rem;
+	padding-top: 4rem;
+	justify-content: center; //centerline the subgrid below
+
+	//create sub-grid system
+	display: grid;
+	grid-template-columns: max-content;
+	grid-template-rows: 1fr min-content 6rem 1fr; //defiend the first row and we established specific height of the container. The remainder try to fit in between
+	grid-row-gap: 1.5rem;
+
+	&__logo {
+		height: 3rem;
+		justify-self: center;
+	}
+	&__btn {
+		align-self: start;
+		justify-self: start;
+	}
+	&__seenon-text {
+		//create a sub grid system
+		display: grid;
+		grid-template-columns: 1fr max-content 1fr;
+		grid-column-gap: 3rem;
+		align-items: center;
+
+		font-size: 1.6rem;
+		color: $color-grey-light-2;
+
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+
+			height: 1px;
+			background-color: currentColor;
+		}
+	}
+	&__seenon-logos {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-column-gap: 3rem;
+		justify-items: center;
+		img {
+			height: 2.5rem;
+			filter: brightness(70%);
+		}
+	}
 }
