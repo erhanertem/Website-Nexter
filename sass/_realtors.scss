@@ -25,6 +25,7 @@
 
 		align-items: center;
 	}
+
 	&__img {
 		display: block;
 
@@ -32,8 +33,7 @@
 		height: 7rem;
 		border-radius: 50%;
 	}
-	&__details {
-	}
+
 	&__sold {
 		text-transform: uppercase;
 		color: $color-grey-light-2;

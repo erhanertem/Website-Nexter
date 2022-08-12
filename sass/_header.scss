@@ -15,8 +15,9 @@
 
 	//create sub-grid system
 	display: grid;
-	grid-template-columns: max-content;
-	grid-template-rows: 1fr min-content 6rem 1fr; //defiend the first row and we established specific height of the container. The remainder try to fit in between
+	//grid container needs to be more responsive as well so max-content and min-content range needs to be established.
+	grid-template-columns: minmax(min-content, max-content);
+	grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr; //defiend the first row and we established specific height of the container. The remainder try to fit in between
 	grid-row-gap: 1.5rem;
 
 	&__logo {
@@ -51,8 +52,12 @@
 		grid-template-columns: repeat(4, 1fr);
 		grid-column-gap: 3rem;
 		justify-items: center;
+		align-items: center;
+
 		img {
-			height: 2.5rem;
+			// the images wont scale to viewport width as height remains same so the table remains same so we have to change it to max-height in order to make it responsive
+			max-height: 2.5rem;
+			max-width: 100%;
 			filter: brightness(70%);
 		}
 	}
