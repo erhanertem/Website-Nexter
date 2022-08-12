@@ -16,7 +16,8 @@ $font-display: "Josefin Sans", sans-serif;
 
 // RESPONSIVE BREAKPOINTS
 // we should use em with breakpoints rather than px
-$bp-largest: 75em; // 1200px
+$bp-largest: 75em; // 1200px/16px
+$bp-large: 62.5em; // 1000px/16px
 
 //global reset
 *,
@@ -58,4 +59,14 @@ body {
 	// 	padding: 40px;
 	// 	font-size: 3rem;
 	// }
+
+	// with this media query we plan to take the side nav bar off and place at the top to save space for the remaining crammed up composition .@ 100px breakpoint we have alreasy font-size set to 50% or 8px!
+	@media only screen and (max-width: $bp-large) {
+		display: grid;
+		grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+		grid-template-columns:
+			[full-start] minmax(6rem, 1fr)
+			[center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+			[center-end] minmax(6rem, 1fr) [full-end];
+	}
 }
