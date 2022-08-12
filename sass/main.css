@@ -188,6 +188,11 @@ body {
     grid-column: full-start/full-end;
   }
 }
+@media only screen and (max-width: 31.25em) {
+  .header {
+    padding: 5rem;
+  }
+}
 .header__logo {
   height: 3rem;
   justify-self: center;
@@ -251,6 +256,12 @@ body {
   .realtors__list {
     grid-template-columns: repeat(3, -webkit-min-content -webkit-max-content);
     grid-template-columns: repeat(3, min-content max-content);
+  }
+}
+@media only screen and (max-width: 31.25em) {
+  .realtors__list {
+    grid-template-columns: -webkit-min-content -webkit-max-content;
+    grid-template-columns: min-content max-content;
   }
 }
 .realtors__img {
